@@ -2,12 +2,15 @@ clc;
 clear;
 close all;
 
+% 屏幕分辨率设置
 monitorW = 1920;
 monitorH = 1080;
 
+% 对象数组初始化
 clientNum = 1;
 clients(1,300)=Client();
 
+% 仿真界面初始化
 hFigure = figure('Color', [1, 1, 1], ...
 'Position', [0.2 * monitorW, 0.2 * monitorH, 0.4 * monitorW, 0.4 * monitorH], ...
 'Name', 'M/M/N 排队仿真系统', 'NumberTitle', 'off', 'MenuBar', 'none', 'Resize', 'off');
@@ -16,9 +19,11 @@ Draw(hFigure, monitorW, monitorH, [], []);
 [serverNum, seatNum, serverTime, totalTime, clientFrequency] = GetSettings();
 [servers, seats]=UpdateSettings(hFigure, monitorW, monitorH, serverNum, seatNum);
 
-
+% 出口位置
 exitRect = Rect();
 exitRect.setPos(monitorW * 0.4 * 7/10 - 25, 25, 0, 0);
+
+% 记录最后一个服务结束的顾客的编号
 lastServedClient = 0;
 Draw(hFigure, monitorW, monitorH, servers, seats);
 

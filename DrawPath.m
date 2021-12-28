@@ -1,9 +1,11 @@
-function upFlag = DrawPath(hFigure, srcRect, desRect)
-    %myFun - Description
+function DrawPath(hFigure, srcRect, desRect)
+    %DrawPath - Description
     %
-    % Syntax: output = myFun(input)
+    % Syntax: DrawPath(hFigure, srcRect, desRect)
     %
     % Long description
+    %
+    % ?????????
     if desRect.y > srcRect.y
         upFlag = 1;
     elseif desRect.y < srcRect.y

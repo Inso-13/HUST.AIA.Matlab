@@ -1,7 +1,8 @@
+% 座位类
 classdef Seat < Rect
     properties
-        isEmpty = 1;
-        seatingWho = -1;
+        isEmpty = 1;        % 座位是否空闲
+        seatingWho = -1;    % 坐在该座位上的顾客的序号
     end
 
     methods

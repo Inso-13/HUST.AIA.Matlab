@@ -1,9 +1,11 @@
 function [serverNum, seatNum, serverTime, totalTime, clientFrequency] = GetSettings()
-%myFun - Description
+%GetSettings - Description
 %
 % Syntax: [seatNum, serverNum, seatNum, serverTime, totalTime, clientFrequency] = GetSettings()
 %
 % Long description
+%
+%   得到用户自定义的系统属性
     proptm = {'设置服务台总数：', '设置等待座位数：', '设置单次服务所需时间：', '设置系统仿真时间：', '设置客户到达频率(lambda)：'};
     defaults = {'3','20','10','500','0.3'};
     ret = inputdlg(proptm,'',1,defaults);
