@@ -5,7 +5,7 @@ function DrawPath(hFigure, srcRect, desRect)
     %
     % Long description
     %
-    % ?????????
+    % 绘制顾客的行动路线
     if desRect.y > srcRect.y
         upFlag = 1;
     elseif desRect.y < srcRect.y
