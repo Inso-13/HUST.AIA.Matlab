@@ -1,9 +1,10 @@
 function Start(servers, seats, clients, clientFrequency, serverTime, totalTime, hFigure, monitorW)
-    %myFun - Description
+    %Start - Description
     %
     % Syntax: Start()
     %
     % Long description
+    %   开始仿真
     
     % 出口位置
     exitRect = Rect();
@@ -53,10 +54,10 @@ function Start(servers, seats, clients, clientFrequency, serverTime, totalTime, 
             LqReal = a_s^serverNum * service_strength * P_0 / (factorial(serverNum) * (1 - service_strength)^2);
             %------------求W_q的值--------------(t时段优化后排队的时间)
             WqReal = LqReal / clientFrequency;
-            WReal = WqReal + serverTime;
+            WReal = WqReal + serviceTime;
             LReal = WReal * clientFrequency;
 
-            defaults = {num2str(Lq), num2str(Wq), num2str(L), num2str(W), num2str(RealLq), num2str(RealWq), num2str(RealL), num2str(RealW)};
+            defaults = {num2str(Lq), num2str(Wq), num2str(L), num2str(W), num2str(LqReal), num2str(WqReal), num2str(LReal), num2str(WReal)};
             inputdlg(proptm, '', 1, defaults);
             close all;
             return;
@@ -217,10 +218,10 @@ function Start(servers, seats, clients, clientFrequency, serverTime, totalTime, 
     LqReal = a_s^serverNum * service_strength * P_0 / (factorial(serverNum) * (1 - service_strength)^2);
     %------------求W_q的值--------------(t时段优化后排队的时间)
     WqReal = LqReal / clientFrequency;
-    WReal = WqReal + serverTime;
+    WReal = WqReal + serviceTime;
     LReal = WReal * clientFrequency;
 
-    defaults = {num2str(Lq), num2str(Wq), num2str(L), num2str(W), num2str(RealLq), num2str(RealWq), num2str(RealL), num2str(RealW)};
+    defaults = {num2str(Lq), num2str(Wq), num2str(L), num2str(W), num2str(LqReal), num2str(WqReal), num2str(LReal), num2str(WReal)};
     inputdlg(proptm, '', 1, defaults);
     close all;
     return;

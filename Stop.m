@@ -4,6 +4,9 @@ function Stop()
     % Syntax: Stop()
     %
     % Long description
+    %   ????
+    %   stopNow?Start?????
+
     global stopNow;
     stopNow = 1;
 end
