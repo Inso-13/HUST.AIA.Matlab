@@ -38,7 +38,7 @@ function Start(servers, seats, clients, clientFrequency, serverTime, totalTime, 
             L = W * clientFrequency;
             Lq = Wq * clientFrequency;
 
-            service = 1.0/serviceTime ; a_s = clientFrequency / 1;
+            service = 1.0/serverTime ; a_s = clientFrequency / 1;
             %求服务强度
             service_strength = clientFrequency / (serverNum * service);
             %求P_0式子的中括号中带k的级数和部分的值
@@ -54,7 +54,7 @@ function Start(servers, seats, clients, clientFrequency, serverTime, totalTime, 
             LqReal = a_s^serverNum * service_strength * P_0 / (factorial(serverNum) * (1 - service_strength)^2);
             %------------求W_q的值--------------(t时段优化后排队的时间)
             WqReal = LqReal / clientFrequency;
-            WReal = WqReal + serviceTime;
+            WReal = WqReal + serverTime;
             LReal = WReal * clientFrequency;
 
             defaults = {num2str(Lq), num2str(Wq), num2str(L), num2str(W), num2str(LqReal), num2str(WqReal), num2str(LReal), num2str(WReal)};
@@ -200,7 +200,7 @@ function Start(servers, seats, clients, clientFrequency, serverTime, totalTime, 
     L = W * clientFrequency;
     Lq = Wq * clientFrequency;
 
-    service = 1.0 / serviceTime; a_s = clientFrequency / 1;
+    service = 1.0 / serverTime; a_s = clientFrequency / 1;
     %求服务强度
     service_strength = clientFrequency / (serverNum * service);
     %求P_0式子的中括号中带k的级数和部分的值
@@ -218,7 +218,7 @@ function Start(servers, seats, clients, clientFrequency, serverTime, totalTime, 
     LqReal = a_s^serverNum * service_strength * P_0 / (factorial(serverNum) * (1 - service_strength)^2);
     %------------求W_q的值--------------(t时段优化后排队的时间)
     WqReal = LqReal / clientFrequency;
-    WReal = WqReal + serviceTime;
+    WReal = WqReal + serverTime;
     LReal = WReal * clientFrequency;
 
     defaults = {num2str(Lq), num2str(Wq), num2str(L), num2str(W), num2str(LqReal), num2str(WqReal), num2str(LReal), num2str(WReal)};
