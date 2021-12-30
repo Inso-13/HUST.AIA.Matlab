@@ -1,7 +1,7 @@
-function [servers, seats] = UpdateSettings(hFigure, monitorW, monitorH, serverNum, seatNum)
+function [servers, seats] = UpdateSettings(hFigure, monitorW, monitorH, serverNum, seatNum, serverTime)
     %UpdateSettings - Description
     %
-    % Syntax: [servers, seats] = UpdateSettings(hFigure, monitorW, monitorH, serverNum, seatNum)
+    % Syntax: [servers, seats] = UpdateSettings(hFigure, monitorW, monitorH, serverNum, seatNum, serverTime)
     %
     % Long description
     %
@@ -19,6 +19,7 @@ function [servers, seats] = UpdateSettings(hFigure, monitorW, monitorH, serverNu
         thisServer = servers(serverIndex);
         thisServer.setPos((serverIndex - 1) * serverSizeW + serverIndex * serverMarginW + 10,(figureH - 20) / 4 * 3,serverSizeW,serverSizeH);
         thisServer.setIndex(serverIndex);
+        thisServer.serverTime = exprnd(serverTime);
     end
 
     seatMarginWFactor = (floor((seatNum + 1) / 2)) * 3 + 1;

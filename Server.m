@@ -3,6 +3,7 @@ classdef Server < Rect
     properties
         isEmpty = 1;        % 服务台是否空闲
         servingWho = -1;    % 正在被服务的顾客的序号
+        serverTime = -1;    % 该服务台的实际服务时间
     end
 
     methods 
